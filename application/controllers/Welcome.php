@@ -24,4 +24,10 @@ class Welcome extends CI_Controller {
 		$this->load->view('blank.php');
 		$this->load->view('layout/footer.php');
 	}
+	public function login()
+	{
+		$this->load->view('layout/auth_header.php');
+		$this->load->view('auth/login.php');
+		$this->load->view('layout/auth_footer.php');
+	}
 }
