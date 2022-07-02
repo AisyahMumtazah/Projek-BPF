@@ -95,8 +95,7 @@
                       class="form-control"
                       name="password"
                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                      aria-describedby="password"
-                    />
+                      aria-describedby="password"/>
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
                 </div>
@@ -113,7 +112,7 @@
 
               <p class="text-center">
                 <span>Ingin menjadi Anggota?</span>
-                <a href="auth-register-basic.html">
+                <a href="<?=site_url('Welcome/registrasi')?>">
                   <span>Buat Akun</span>
                 </a>
               </p>

@@ -30,4 +30,22 @@ class Welcome extends CI_Controller {
 		$this->load->view('auth/login.php');
 		$this->load->view('layout/auth_footer.php');
 	}
+	public function registrasi()
+	{
+		$this->load->view('layout/auth_header.php');
+		$this->load->view('auth/registrasi.php');
+		$this->load->view('layout/auth_footer.php');
+	}
+	public function anggota()
+	{
+		$this->load->view('layout/header.php');
+		$this->load->view('admin/vw_anggota.php');
+		$this->load->view('layout/footer.php');
+	}
+	public function peminjaman()
+	{
+		$this->load->view('layout/header.php');
+		$this->load->view('admin/vw_peminjaman.php');
+		$this->load->view('layout/footer.php');
+	}
 }
