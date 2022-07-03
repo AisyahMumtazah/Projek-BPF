@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800"><?php echo $judul; ?></h1>
+    <div class="row">
+            <?= $this->session->flashdata('message'); ?>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>No</td>
+                        <td>Judul</td>
+                        <td>Tanggal Pinjam</td>
+                        <td>Tanggal kembali</td>
+                        <td>Tanggal Pengembalian</td>
+                        <td>Denda</td>
+                        <td>Aksi</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 1; ?>
+                    <?php foreach ($pengembalian as $us) : ?>
+                        <tr>
+                            <td><?= $us['judul']; ?></td>
+                            <td><?= $us['tanggal_pinjam']; ?></td>
+                            <td><?= $us['tanggal_kembali']; ?></td>
+                            <td><?= $us['tanggal_pengembalian']; ?></td>
+                            <td><?= $us['denda']; ?></td>
+                            <td>
+                                <a href="<?= base_url('Pengembalian/simpan/') . $us['id']; ?>" class="badge badge-danger">Simpan</a>
+                            </td>
+                        </tr>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
