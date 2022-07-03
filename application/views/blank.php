@@ -4,7 +4,7 @@
  <div class="col-sm" style="padding:5px 20px;">
      <a type="button" class="btn btn-primary" href="<?=site_url('Welcome/tambahBuku')?>" role="button">
          <span class="tf-icons bx bx-plus-circle"></span>&nbsp; Tambah Buku
-</a>
+     </a>
  </div>
 
  <!-- / Content -->

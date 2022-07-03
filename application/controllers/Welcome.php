@@ -54,4 +54,10 @@ class Welcome extends CI_Controller {
 		$this->load->view('admin/vw_tambah_buku.php');
 		$this->load->view('layout/footer.php');
 	}
+	public function listbukuUser()
+	{
+		$this->load->view('layout/header_user.php');
+		$this->load->view('user/vw_list_buku.php');
+		$this->load->view('layout/footer.php');
+	}
 }
