@@ -36,10 +36,22 @@ class Welcome extends CI_Controller {
 		$this->load->view('auth/registrasi.php');
 		$this->load->view('layout/auth_footer.php');
 	}
+	public function dashboard()
+	{
+		$this->load->view('layout/header.php');
+		$this->load->view('admin/vw_dashboard.php');
+		$this->load->view('layout/footer.php');
+	}
 	public function anggota()
 	{
 		$this->load->view('layout/header.php');
 		$this->load->view('admin/vw_anggota.php');
+		$this->load->view('layout/footer.php');
+	}
+	public function buku()
+	{
+		$this->load->view('layout/header.php');
+		$this->load->view('admin/vw_buku.php');
 		$this->load->view('layout/footer.php');
 	}
 	public function peminjaman()
@@ -48,16 +60,40 @@ class Welcome extends CI_Controller {
 		$this->load->view('admin/vw_peminjaman.php');
 		$this->load->view('layout/footer.php');
 	}
+	public function daftarpengembalian()
+	{
+		$this->load->view('layout/header.php');
+		$this->load->view('admin/vw_daftar_pengembalian.php');
+		$this->load->view('layout/footer.php');
+	}
+	public function formpengembalian()
+	{
+		$this->load->view('layout/header.php');
+		$this->load->view('admin/vw_form_pengembalian.php');
+		$this->load->view('layout/footer.php');
+	}
 	public function tambahBuku()
 	{
 		$this->load->view('layout/header.php');
 		$this->load->view('admin/vw_tambah_buku.php');
 		$this->load->view('layout/footer.php');
 	}
+	public function tambahPeminjaman()
+	{
+		$this->load->view('layout/header.php');
+		$this->load->view('admin/vw_tambah_peminjaman.php');
+		$this->load->view('layout/footer.php');
+	}
 	public function listbukuUser()
 	{
 		$this->load->view('layout/header_user.php');
 		$this->load->view('user/vw_list_buku.php');
+		$this->load->view('layout/footer.php');
+	}
+	public function riwayatpeminjaman()
+	{
+		$this->load->view('layout/header_user.php');
+		$this->load->view('user/vw_riwayat_peminjaman.php');
 		$this->load->view('layout/footer.php');
 	}
 }
