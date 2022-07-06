@@ -142,7 +142,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item">
-              <a href="<?=site_url('Welcome/')?>" class="menu-link">
+              <a href="<?=site_url('Welcome/dashboard')?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
@@ -150,7 +150,7 @@
 
             <!-- Layouts -->
             <li class="menu-item">
-              <a href="buku.php" class="menu-link menu-toggle">
+              <a href="<?=site_url('Welcome/buku')?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div data-i18n="Layouts">Buku</div>
               </a>
@@ -162,9 +162,9 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="pengembalian.php" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                <div data-i18n="Authentications">Pengembalian</div>
+              <a href="<?=site_url('Welcome/daftarpengembalian')?>" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div data-i18n="Account Settings">Pengembalian</div>
               </a>
             </li>
             <li class="menu-item">
