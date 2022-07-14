@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800"><?php echo $judul; ?></h1>
+    <div class="row">
+        <div class="col-md-6"><a href="<?= base_url() ?>Peminjaman/tambah" class="btn btn-info mb-2">Halaman Pengembalian</a></div>
+        <div class="col-md-12">
+            <?= $this->session->flashdata('message'); ?>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Kode Pengembalian</th>
+                        <th>Kode Peminjaman</th>
+                        <th>Id Buku</th>
+                        <th>Id Anggota</th>
+                        <th>Tanggal Pengembalian</th>
+                        <th>Denda</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 1; ?>
+                    <?php foreach ($buku as $us) : ?>
+                        <tr>
+                            <td><?= $us['kode_pengembalian']; ?></td>
+                            <td><?= $us['kode_peminjaman']; ?></td>
+                            <td><?= $us['id_buku']; ?></td>
+                            <td><?= $us['id_anggota']; ?></td>
+                            <td><?= $us['tanggal_pengembalian']; ?></td>
+                            <td><?= $us['denda']; ?></td>
+                            <td>
+                                <a href="<?= base_url('Buku/hapus/') . $us['id']; ?>" class="badge badge-danger">Hapus</a>
+                                <a href="<?= base_url('Buku/edit/') . $us['id']; ?>" class="badge badge-warning">Edit</a>
+                                <a href="<?= base_url('Buku/detail/') . $us['id']; ?>" class="badge badge-warning">Details</a>
+                            </td>
+                        </tr>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
