@@ -31,6 +31,7 @@
                             </div>
                         </div>
                         <br class="my-2">
+                        <div class="container">
                         <div class="row justify-content-end">
                             <div class="col-sm-10">
                                 <button type="submit" class="btn btn-primary">Kembali</button>
@@ -40,6 +41,7 @@
                             <div class="col-sm-10">
                                 <button type="submit" class="btn btn-primary">Tambah</button>
                             </div>
+                        </div>
                         </div>
                     </form>
                 </div>
