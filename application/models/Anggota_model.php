@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User_model extends CI_Model{
-    public $table = 'user';
-    public $id = 'user.id';
+class Anggota_model extends CI_Model{
+    public $table = 'anggota';
+    public $id = 'anggota.id';
     public function __construct(){
         parent::__construct();
     }
@@ -12,9 +12,9 @@ class User_model extends CI_Model{
         $query = $this->db->get();
         return $query->result_array();
     }
-    public function getBy(){
+    public function getById($id){
         $this->db->from($this->table);
-        $this->db->where('username',$this->session->userdata('username'));
+        $this->db->where('id',$id);
         $query = $this->db->get();
         return $query->row_array();
     }

@@ -72,7 +72,7 @@ class Auth extends CI_Controller{
         $this->session->set_flashdata('message', '<div class="alert 
             alert-success" role="alert">Selamat! Akunmu telah berhasil 
             terdaftar, Silahkan Login! </div>');
-            redirect('auth');
+            redirect('Auth');
         }
     }
     function cek_login(){
