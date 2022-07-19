@@ -20,20 +20,26 @@ class Buku extends CI_Controller {
 		$data['judul'] = "Halaman Tambah Buku";
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 		$data['buku'] = $this->Buku_model->get();
-		$this->form_validation->set_rules('nama', 'Nama Buku', 'required', [
-			'required' => 'Nama Buku Wajib di isi'
+		$this->form_validation->set_rules('judul', 'Judul Buku', 'required', [
+			'required' => 'Judul Buku Wajib di isi'
 		]);
-		$this->form_validation->set_rules('stok', 'Stok', 'required', [
-			'required' => 'Stok Buku Wajib di isi'
+		$this->form_validation->set_rules('pengarang', 'Pengarang', 'required', [
+			'required' => 'Pengarang Buku Wajib di isi'
 		]);
-		$this->form_validation->set_rules('harga', 'Harga', 'required', [
-			'required' => 'Harga Buku Wajib di isi'
+		$this->form_validation->set_rules('kategori', 'Kategori', 'required', [
+			'required' => 'Kategori Buku Wajib di isi'
 		]);
-		$this->form_validation->set_rules('ukuran', 'Ukuran', 'required', [
-			'required' => 'Ukuran Buku Wajib di isi'
+		$this->form_validation->set_rules('nama_penerbit', 'Nama Penerbit', 'required', [
+			'required' => 'Nama Penerbit Buku Wajib di isi'
 		]);
-		$this->form_validation->set_rules('keterangan', 'Keterangan', 'required', [
-			'required' => 'Keterangan Buku Wajib di isi'
+		$this->form_validation->set_rules('tahun_terbit', 'Tahun Terbit', 'required', [
+			'required' => 'Tahun Terbit Buku Wajib di isi'
+		]);
+		$this->form_validation->set_rules('id_buku', 'Nomor ISBN', 'required', [
+			'required' => 'Nomor ISBN Buku Wajib di isi'
+		]);
+		$this->form_validation->set_rules('tgl_pengadaan', 'Tanggal Pengadaan', 'required', [
+			'required' => 'Tanggal Pengadaan Buku Wajib di isi'
 		]);
 		if ($this->form_validation->run() == false) {
 			$this->load->view("layout/header", $data);
@@ -41,21 +47,23 @@ class Buku extends CI_Controller {
 			$this->load->view("layout/footer");
 		} else {
 			$data = [
-				'nama' => $this->input->post('nama'),
-				'stok' => $this->input->post('stok'),
-				'harga' => $this->input->post('harga'),
-				'ukuran' => $this->input->post('ukuran'),
-				'keterangan' => $this->input->post('keterangan'),
+				'judul' => $this->input->post('judul'),
+				'pengarang' => $this->input->post('pengarang'),
+				'kategori' => $this->input->post('kategori'),
+				'nama_penerbit' => $this->input->post('nama_penerbit'),
+				'tahun_terbit' => $this->input->post('tahun_terbit'),
+				'id_buku' => $this->input->post('id_buku'),
+				'tgl_pengadaan' => $this->input->post('tgl_pengadaan'),
 			];
-        $upload_image = $_FILES['gambar']['name'];
+        $upload_image = $_FILES['cover']['name'];
         if ($upload_image) {
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size'] = '2048';
             $config['upload_path'] = './assets/img/buku/';
             $this->load->library('upload', $config);
-            if ($this->upload->do_upload('gambar')) {
+            if ($this->upload->do_upload('cover')) {
                 $new_image = $this->upload->data('file_name');
-                $this->db->set('gambar', $new_image);
+                $this->db->set('cover', $new_image);
             } else {
                 echo $this->upload->display_errors();
             }
@@ -130,9 +138,11 @@ class Buku extends CI_Controller {
 		$this->Buku_model->delete($id);
         $error = $this->db->error();
         if ($error['code'] != 0) {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><i class="icon fas fa-info-circle"></i>Data Buku tidak dapat dihapus!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+			<i class="icon fas fa-info-circle"></i>Data Buku tidak dapat dihapus!</div>');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"><i class="icon fas fa-check-circle"></i>Data Buku Berhasil Dihapus!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+			<i class="icon fas fa-check-circle"></i>Data Buku Berhasil Dihapus!</div>');
         }
         redirect('Buku');
     }
