@@ -2,21 +2,18 @@
     <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">
             <div class="app-brand justify-content-center">
-                <a href="index.html" class="app-brand-link gap-2">
-                    <span class="app-brand-text demo text-body fw-bolder">Registrasi</span>
-                </a>
             </div>
             <!-- Register -->
             <div class="card">
                 <div class="card-body">
                     <h4 class="mb-2">Selamat Datang di Perpustakaan Hilir-Mudik</h4>
                     <p class="mb-4">Silahkan isi Username dan Password untuk melakukan login</p>
-
-                    <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+                    <?= $this->session->flashdata('message'); ?>
+                    <form id="formAuthentication" class="mb-3" action="<?=base_url('Auth');?>" method="POST">
                         <div class="mb-3">
-                            <label for="email" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="email" name="email-username"
-                                placeholder="Enter your email or username" autofocus />
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username"
+                                placeholder="Enter your username" autofocus />
                         </div>
                         <div class="mb-3 form-password-toggle">
                             <div class="d-flex justify-content-between">
@@ -28,7 +25,7 @@
                             <div class="input-group input-group-merge">
                                 <input type="password" id="password" class="form-control" name="password"
                                     placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                                    aria-describedby="password" />
+                                    aria-describedby="password"/>
                                 <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                             </div>
                         </div>
@@ -44,7 +41,7 @@
                     </form>
                     <p class="text-center">
                         <span>Ingin menjadi Anggota?</span>
-                        <a href="<?=site_url('Welcome/registrasi')?>">
+                        <a href="<?=site_url('Auth/registrasi')?>">
                             <span>Buat Akun</span>
                         </a>
                     </p>

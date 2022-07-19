@@ -10,7 +10,7 @@
                             <span class="app-brand-text demo text-body fw-bolder">Registrasi</span>
                         </a>
                     </div>
-                    <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+                    <form id="formAuthentication" class="mb-3" action="<?=base_url('Auth/registrasi');?>" method="POST">
                         <div class="mb-3">
                             <label for="namalengkap" class="form-label">Nama Lengkap</label>
                             <input type="text" class="form-control" id="namalengkap" name="namalengkap"
