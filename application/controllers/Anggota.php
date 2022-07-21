@@ -12,10 +12,10 @@ class Anggota extends CI_Controller
 	public function index()
 	{
 		$data['judul'] = "Halaman Anggota";
-		$data['anggota'] = $this->Anggota_model->get();
+		$data['anggota'] = $this->Anggota_model->getJoin();
 		//$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 		$this->load->view("layout/header", $data);
-		$this->load->view("jurusan/vw_jurusan", $data);
+		$this->load->view("admin/vw_anggota", $data);
 		$this->load->view("layout/footer");
 	}
 

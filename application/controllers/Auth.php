@@ -88,7 +88,7 @@ class Auth extends CI_Controller{
                 ];
                 $this->session->set_userdata($data);
                 if($user['role'=='admin']){
-                    redirect('Buku');
+                    redirect('Welcome');
                 }else{
                     redirect('User');
                 }
@@ -103,11 +103,5 @@ class Auth extends CI_Controller{
                 redirect('Auth');
         }
     }
-    function logout(){
-        $this->session->unset_userdata('username');
-        $this->session->unset_userdata('role');
-        $this->session->set_flashdata('message','<div class="alert alert-success" 
-        role="alert">Berhasil Logout!</div>');
-        redirect('Auth');
-    }
+    
 }

@@ -1,40 +1,46 @@
-<!-- Begin Page Content -->
-<div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800"><?php echo $judul; ?></h1>
-    <div class="row justify-content-center">
-        <div class="col-md-8 ">
-            <div class="card">
-                <div class="card-header justify-content-center">
-                    Form Tambah Data Peminjaman
-                </div>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Peminjaman /</span> Form Tambah Peminjaman</h4>
+    <div class="row">
+        <!-- Basic Layout -->
+        <div class="col-xxl">
+            <div class="card mb-4">
                 <div class="card-body">
                     <form action="" method="POST" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="id_anggota">Id Anggota</label>
-                            <input type="text" name="id_anggota" value="<?= set_value('id_anggota') ?>" class="form-control" id="id_anggota" placeholder="Id Anggota">
-                            <?= form_error('id_anggota', '<small class="text-danger p1-3">', '</small>'); ?>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="id_anggota">ID Anggota</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="id_anggota" placeholder="ID Anggota" />
+                                <?= form_error('id_anggota', '<small class="text-danger p1-3">', '</small>'); ?>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="id_buku">Id Buku</label>
-                            <input type="text" name="id_buku" value="<?= set_value('id_buku') ?>" class="form-control" id="id_buku" placeholder="Id Buku">
-                            <?= form_error('id_buku', '<small class="text-danger p1-3">', '</small>'); ?>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="id_buku">ID Buku</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="id_buku" placeholder="Nomor ISBN" />
+                                <?= form_error('id_buku', '<small class="text-danger p1-3">', '</small>'); ?>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="tanggal_pinjam">Tanggal Pinjam</label>
-                            <input type="date" name="tanggal_pinjam" value="<?= set_value('tanggal_pinjam') ?>" class="form-control" id="tanggal_pinjam" placeholder="Tanggal Pinjam">
-                            <?= form_error('tanggal_pinjam', '<small class="text-danger p1-3">', '</small>'); ?>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="tanggal_pinjam">Tanggal Pinjam</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="date" id="tanggal_pinjam" placeholder="dd/MM/YYY">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="tanggal_kembali">Tanggal Kembali</label>
-                            <input type="date" name="tanggal_kembali" value="<?= set_value('tanggal_kembali') ?>" class="form-control" id="tanggal_kembali" placeholder="Tanggal Kembali">
-                            <?= form_error('tanggal_kembali', '<small class="text-danger p1-3">', '</small>'); ?>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="tanggal_kembali">Tanggal Kembali</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="date" id="tanggal_kembali" placeholder="dd/MM/YYY">
+                            </div>
                         </div>
-                        <a href="<?= base_url('Peminjaman') ?>" class="btn btn-danger">Kembali</a>
-                        <button type="submit" name="tambah" class="btn btn-primary float-right">Tambah</button>
+                        <br class="my-2">
+                        <div class="row justify-content-end">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Simpan</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>

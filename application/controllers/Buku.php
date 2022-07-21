@@ -15,46 +15,25 @@ class Buku extends CI_Controller {
 		$this->load->view("buku/vw_buku", $data);
 		$this->load->view("Layout/footer", $data);
 	}
+	public function tampilTambah(){
+		$this->load->view("layout/header");
+		$this->load->view("buku/vw_tambah_buku");
+		$this->load->view("layout/footer");
+	}
 	public function tambah()
 	{
-		$data['judul'] = "Halaman Tambah Buku";
-		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-		$data['buku'] = $this->Buku_model->get();
-		$this->form_validation->set_rules('judul', 'Judul Buku', 'required', [
-			'required' => 'Judul Buku Wajib di isi'
-		]);
-		$this->form_validation->set_rules('pengarang', 'Pengarang', 'required', [
-			'required' => 'Pengarang Buku Wajib di isi'
-		]);
-		$this->form_validation->set_rules('kategori', 'Kategori', 'required', [
-			'required' => 'Kategori Buku Wajib di isi'
-		]);
-		$this->form_validation->set_rules('nama_penerbit', 'Nama Penerbit', 'required', [
-			'required' => 'Nama Penerbit Buku Wajib di isi'
-		]);
-		$this->form_validation->set_rules('tahun_terbit', 'Tahun Terbit', 'required', [
-			'required' => 'Tahun Terbit Buku Wajib di isi'
-		]);
-		$this->form_validation->set_rules('id_buku', 'Nomor ISBN', 'required', [
-			'required' => 'Nomor ISBN Buku Wajib di isi'
-		]);
-		$this->form_validation->set_rules('tgl_pengadaan', 'Tanggal Pengadaan', 'required', [
-			'required' => 'Tanggal Pengadaan Buku Wajib di isi'
-		]);
-		if ($this->form_validation->run() == false) {
-			$this->load->view("layout/header", $data);
-			$this->load->view("buku/vw_tambah_buku", $data);
-			$this->load->view("layout/footer");
-		} else {
-			$data = [
-				'judul' => $this->input->post('judul'),
-				'pengarang' => $this->input->post('pengarang'),
-				'kategori' => $this->input->post('kategori'),
-				'nama_penerbit' => $this->input->post('nama_penerbit'),
-				'tahun_terbit' => $this->input->post('tahun_terbit'),
-				'id_buku' => $this->input->post('id_buku'),
-				'tgl_pengadaan' => $this->input->post('tgl_pengadaan'),
-			];
+		//$data['judul'] = "Halaman Tambah Buku";
+		//$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('email')])->row_array();
+		//$data['buku'] = $this->Buku_model->get();
+		$data = [
+			'judul' => $this->input->post('judul'),
+			'pengarang' => $this->input->post('pengarang'),
+			'kategori' => $this->input->post('kategori'),
+			'nama_penerbit' => $this->input->post('nama_penerbit'),
+			'tahun_terbit' => $this->input->post('tahun_terbit'),
+			'id_buku' => $this->input->post('id_buku'),
+			'tgl_pengadaan' => $this->input->post('tgl_pengadaan')
+		];
         $upload_image = $_FILES['cover']['name'];
         if ($upload_image) {
             $config['allowed_types'] = 'gif|jpg|png';
@@ -67,12 +46,11 @@ class Buku extends CI_Controller {
             } else {
                 echo $this->upload->display_errors();
             }
-        }
+		}
 			$this->Buku_model->insert($data);
 			$this->session->set_flashdata('message', '<div class="alert alert-success"
 	role="alert">Data Buku Berhasil Ditambah!</div>');
 			redirect('Buku');
-		}
 	}
 	public function edit($id)
 	{
