@@ -21,7 +21,13 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('layout/header.php');
-		$this->load->view('blank.php');
+		$this->load->view('admin/vw_dashboard.php');
+		$this->load->view('layout/footer.php');
+	}
+	public function user()
+	{
+		$this->load->view('layout/header_user.php');
+		$this->load->view('admin/vw_dashboard.php');
 		$this->load->view('layout/footer.php');
 	}
 	public function login()
@@ -35,12 +41,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('layout/auth_header.php');
 		$this->load->view('auth/registrasi.php');
 		$this->load->view('layout/auth_footer.php');
-	}
-	public function dashboard()
-	{
-		$this->load->view('layout/header.php');
-		$this->load->view('admin/vw_dashboard.php');
-		$this->load->view('layout/footer.php');
 	}
 	public function anggota()
 	{

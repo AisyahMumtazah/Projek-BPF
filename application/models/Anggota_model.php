@@ -18,6 +18,13 @@ class Anggota_model extends CI_Model{
         $query = $this->db->get();
         return $query->row_array();
     }
+    public function getJoin(){
+        $this->db->select('a.*, u.username as username');
+        $this->db->from('anggota a');
+        $this->db->join('user u', 'a.id_anggota=u.uid');
+        $query=$this->db->get();
+        return $query->result_array();
+    }
     public function update($where,$data){
         $this->db->update($this->table,$data,$where);
         return $this->db->affected_rows();

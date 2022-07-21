@@ -150,31 +150,31 @@
 
             <!-- Layouts -->
             <li class="menu-item">
-              <a href="<?=site_url('Welcome/buku')?>" class="menu-link">
+              <a href="<?=site_url('Buku')?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div data-i18n="Layouts">Buku</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="<?=site_url('Welcome/peminjaman')?>" class="menu-link">
+              <a href="<?=site_url('Peminjaman')?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Peminjaman</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="<?=site_url('Welcome/daftarpengembalian')?>" class="menu-link">
+              <a href="<?=site_url('Pengembalian')?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Pengembalian</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="<?=site_url('Welcome/anggota')?>" class="menu-link">
+              <a href="<?=site_url('Anggota')?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-cube-alt"></i>
                 <div data-i18n="Misc">Anggota</div>
               </a>
             </li>
             <li class="menu-item">
-              <a href="logout.php" class="menu-link menu-toggle">
+              <a href="<?=site_url('User/logout')?>" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-cube-alt"></i>
                 <div data-i18n="Misc">Logout</div>
               </a>

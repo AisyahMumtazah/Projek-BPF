@@ -5,7 +5,7 @@
         <div class="col-xxl">
             <div class="card mb-4">
                 <div class="card-body">
-                    <form action="" method="POST">
+                    <form action="<?=base_url('Buku/tambah')?>" method="POST" enctype="multipart/form-data">
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="judul">Judul</label>
                             <div class="col-sm-10">
@@ -40,7 +40,7 @@
                             <label class="col-sm-2 col-form-label" for="id_buku">Nomor ISBN</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="id_buku" placeholder="Kode ISBN" />
-                            </div>s
+                            </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="tgl_pengadaan">Tanggal Pengadaan</label>

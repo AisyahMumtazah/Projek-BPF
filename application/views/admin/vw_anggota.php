@@ -10,119 +10,37 @@
                         <th>ID</th>
                         <th>Username</th>
                         <th>Nama Lengkap</th>
+                        <th>Email</th>
                         <th>No Telepon</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
+                    <?php $i=1; ?>
+                    <?php foreach ($anggota as $us):?>
                     <tr>
-                        <td><strong>1</strong></td>
-                        <td>472947</td>
-                        <td>Sima</td>
-                        <td>Simalakamlama</td>
-                        <td>08374832942</td>
+                        <td><strong><?=$i;?></strong></td>
+                        <td><?=$us['id_anggota'];?></td>
+                        <td><?=$us['username'];?></td>
+                        <td><?=$us['nama_anggota'];?></td>
+                        <td><?=$us['email_anggota'];?></td>
+                        <td><?=$us['no_telp_anggota'];?></td>
                         <td>
                         <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
+                                    <a class="dropdown-item" href="<?=base_url('Anggota/edit').$us['id_anggota'];?>"><i class="bx bx-edit-alt me-1"></i>
                                         Edit</a>
-                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
+                                    <a class="dropdown-item" href="<?=base_url('Anggota/hapus').$us['id_anggota'];?>"><i class="bx bx-trash me-1"></i>
                                         Delete</a>
                                 </div>
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td><strong>1</strong></td>
-                        <td>472947</td>
-                        <td>Sima</td>
-                        <td>Simalakamlama</td>
-                        <td>08374832942</td>
-                        <td>
-                        <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                    data-bs-toggle="dropdown">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0);"><i
-                                            class="bx bx-edit-alt me-1"></i>
-                                        Edit</a>
-                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
-                                        Delete</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>1</strong></td>
-                        <td>472947</td>
-                        <td>Sima</td>
-                        <td>Simalakamlama</td>
-                        <td>08374832942</td>
-                        <td>
-                        <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                    data-bs-toggle="dropdown">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0);"><i
-                                            class="bx bx-edit-alt me-1"></i>
-                                        Edit</a>
-                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
-                                        Delete</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>1</strong></td>
-                        <td>472947</td>
-                        <td>Sima</td>
-                        <td>Simalakamlama</td>
-                        <td>08374832942</td>
-                        <td>
-                        <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                    data-bs-toggle="dropdown">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0);"><i
-                                            class="bx bx-edit-alt me-1"></i>
-                                        Edit</a>
-                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
-                                        Delete</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>1</strong></td>
-                        <td>472947</td>
-                        <td>Sima</td>
-                        <td>Simalakamlama</td>
-                        <td>08374832942</td>
-                        <td>
-                        <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                    data-bs-toggle="dropdown">
-                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0);"><i
-                                            class="bx bx-edit-alt me-1"></i>
-                                        Edit</a>
-                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
-                                        Delete</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+                    <?php $i++;?>
+                    <?php endforeach;?>
                 </tbody>
             </table>
         </div>
