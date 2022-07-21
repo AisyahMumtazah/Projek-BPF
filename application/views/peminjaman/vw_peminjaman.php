@@ -30,14 +30,7 @@
                             <td><?= $us['id_buku']; ?></td>
                             <td><?= $us['tanggal_pinjam']; ?></td>
                             <td><?= $us['tanggal_kembali']; ?></td>
-                            <td>
-                                <?php 
-                                    if ($us['status']=="Sedang Dipinjam"){?>
-                                <span class="badge bg-label-success me-1"><?= $us['status']; ?></span>
-                                <?php }elseif($us['status']=="Sudah Kembali"){?>
-                                <span class="badge bg-label-secondary me-1"><?= $us['status']; ?></span>
-                                <?php}?>
-                            </td>
+                            <td><?= $us['status']; ?></td>
                             <td>
                                 <div class="dropdown">
                                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow"

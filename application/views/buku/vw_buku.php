@@ -35,7 +35,6 @@
                             <td><?= $us['nama_penerbit']; ?></td>
                             <td><?= $us['tahun_terbit']; ?></td>
                             <td><?= $us['tgl_pengadaan']; ?></td>
-                            <td><?= $i; ?></td>
                             <td><img src="<?= base_url('assets/img/buku/') . $us['cover']; ?>" style="width: 100px;"
                                     class="img-thumbnail">
                             </td>
