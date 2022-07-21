@@ -13,7 +13,7 @@ class Anggota extends CI_Controller
 	{
 		$data['judul'] = "Halaman Anggota";
 		$data['anggota'] = $this->Anggota_model->getJoin();
-		//$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 		$this->load->view("layout/header", $data);
 		$this->load->view("admin/vw_anggota", $data);
 		$this->load->view("layout/footer");
@@ -35,7 +35,7 @@ class Anggota extends CI_Controller
 	{
 		$data['judul'] = "Halaman Edit Anggota";
 		$data['anggota'] = $this->Jurusan_model->getById($id);
-		//$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 
 		$this->form_validation->set_rules('nama', 'Nama Jurusan', 'required', [
 			'required' => 'Nama Jurusan Wajib di isi'

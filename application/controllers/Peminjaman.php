@@ -10,7 +10,7 @@ class Peminjaman extends CI_Controller
     public function index()
     {
         $data['judul'] = "Halaman Peminjaman";
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['peminjaman'] = $this->Peminjaman_model->get();
         $this->load->view("Layout/header", $data);
         $this->load->view("peminjaman/vw_peminjaman", $data);
@@ -19,7 +19,7 @@ class Peminjaman extends CI_Controller
     public function tambah()
     {
         $data['judul'] = "Halaman Tambah Peminjaman";
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['peminjaman'] = $this->Peminjaman_model->get();
         $this->form_validation->set_rules('id_anggota', 'ID Anggota', 'required', [
             'required' => 'ID Anggota Wajib di isi'

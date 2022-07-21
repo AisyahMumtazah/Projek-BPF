@@ -10,7 +10,7 @@ class User extends CI_Controller {
 	public function index()
 	{
 		$data['judul'] = "Halaman Buku";
-		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['buku'] = $this->Buku_model->get();
 		$this->load->view("Layout/header_user", $data);
 		$this->load->view("user/vw_list_buku", $data);
@@ -19,7 +19,7 @@ class User extends CI_Controller {
     public function riwayat()
 	{
 		$data['judul'] = "Halaman Buku";
-		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['buku'] = $this->Buku_model->get();
 		$this->load->view("Layout/header_user", $data);
 		$this->load->view("user/vw_riwayat_peminjaman", $data);
