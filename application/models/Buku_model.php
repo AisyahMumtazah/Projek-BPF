@@ -4,7 +4,7 @@ allowed');
 class Buku_model extends CI_Model
 {
     public $table = 'buku';
-    public $id = 'buku.id';
+    public $id = 'buku.id_buku';
     public function __construct()
     {
         parent::__construct();
@@ -18,9 +18,17 @@ class Buku_model extends CI_Model
     public function getById($id)
     {
         $this->db->from($this->table);;
-        $this->db->where('id', $id);
+        $this->db->where('id_buku', $id);
         $query = $this->db->get();
         return $query->row_array();
+    }
+    public function getDes(){
+        $this->db->select('judul,tgl_pengadaan,cover');
+        $this->db->from($this->table);
+        $this->db->order_by('tgl_pengadaan',"DESC");
+        $this->db->limit(3);
+        $query = $this->db->get();
+        return $query->result_array();
     }
     public function update($where, $data)
     {

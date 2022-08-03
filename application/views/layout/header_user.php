@@ -71,13 +71,13 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="<?=site_url('Welcome/user')?>">Home</a>
+                                <a class="nav-link active" aria-current="page" href="<?=site_url('User')?>">Home</a>
                             </li>
                             <li>
                                 <a class="nav-link active"></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="<?=site_url('User')?>">Daftar Buku</a>
+                                <a class="nav-link active" aria-current="page" href="<?=site_url('Welcome/user')?>">Daftar Buku</a>
                             </li>
                             <li>
                                 <a class="nav-link active"></a>
