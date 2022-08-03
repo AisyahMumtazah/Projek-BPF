@@ -7,16 +7,17 @@
                 <div class="card-body">
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="row mb-3">
+                        <input type="hidden" name="kode_peminjaman" value="<?= $peminjaman['kode_peminjaman'];?>"/>
                             <label class="col-sm-2 col-form-label" for="id_anggota">ID Anggota</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="id_anggota" name="id_anggota" value="<?=$peminjaman['id_anggota']?>" placeholder="ID Anggota" />
+                                <input type="text" class="form-control" id="id_anggota" name="id_anggota" value="<?=$peminjaman['id_anggota']?>" placeholder="ID Anggota" readonly />
                                 <?= form_error('id_anggota', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="id_buku">ID Buku</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="id_buku" name="id_buku" value="<?=$peminjaman['id_buku']?>" placeholder="ID Buku" />
+                                <input type="text" class="form-control" id="id_buku" name="id_buku" value="<?=$peminjaman['id_buku']?>" placeholder="ID Buku"  readonly/>
                                 <?= form_error('id_buku', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         <div class="row mb-3">
@@ -36,7 +37,10 @@
                         <br class="my-2">
                         <div class="row justify-content-end">
                             <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                                
+                                    <a href="<?= base_url('Pengembalian/tambah/').$peminjaman['kode_peminjaman']?>" class="btn btn-primary">Ubah Status</a>
+                                
                             </div>
                         </div>
                     </form>
