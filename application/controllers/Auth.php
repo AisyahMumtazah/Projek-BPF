@@ -46,9 +46,8 @@ class Auth extends CI_Controller{
             'required' => 'Email Wajib di isi'
             ]);
         $this->form_validation->set_rules('username', 'Username', 
-            'required|trim|valid_username|is_unique[user.username]', [
+            'required|trim|is_unique[user.username]', [
             'is_unique' => 'Username ini sudah terdaftar!',
-            'valid_username' => 'Username Harus Valid',
             'required' => 'Username Wajib di isi'
             ]);
         $this->form_validation->set_rules('no_telp_anggota', 'No Telp', 'required|trim');
@@ -61,7 +60,7 @@ class Auth extends CI_Controller{
             'required' => 'Password harus diisi'
             ]
             );
-        $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
+        $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password]');
         if($this->form_validation->run()==false){
             $this->load->view('layout/auth_header');
             $this->load->view('auth/registrasi');
@@ -77,7 +76,7 @@ class Auth extends CI_Controller{
                 'email_anggota' => htmlspecialchars($this->input->post('email_anggota', true)),
                 'no_telp_anggota' => htmlspecialchars($this->input->post('no_telp_anggota',true))
             ];
-            $this->User_model->insert($tbl_user);
+            $this->userrole->insert($tbl_user);
             $this->Anggota_model->insert($tbl_anggota);
             redirect('Auth');
         }

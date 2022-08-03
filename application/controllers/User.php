@@ -11,9 +11,9 @@ class User extends CI_Controller {
 	{
 		$data['judul'] = "Halaman Buku";
 		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
-		$data['buku'] = $this->Buku_model->get();
+		$data['buku']=$this->Buku_model->getDes();
 		$this->load->view("Layout/header_user", $data);
-		$this->load->view("user/vw_list_buku", $data);
+		$this->load->view("admin/vw_dashboard", $data);
 		$this->load->view("Layout/footer", $data);
 	}
     public function riwayat()
