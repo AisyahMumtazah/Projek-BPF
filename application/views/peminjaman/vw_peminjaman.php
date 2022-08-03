@@ -39,11 +39,11 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item"
-                                            href="<?=base_url('Peminjaman/edit').$us['id_anggota'];?>"><i
+                                            href="<?=base_url('Peminjaman/edit/').$us['id_anggota'];?>"><i
                                                 class="bx bx-edit-alt me-1"></i>
                                             Edit</a>
                                         <a class="dropdown-item"
-                                            href="<?=base_url('Peminjaman/hapus').$us['id_anggota'];?>"><i
+                                            href="<?=base_url('Peminjaman/hapus/').$us['id_anggota'];?>"><i
                                                 class="bx bx-trash me-1"></i>
                                             Delete</a>
                                     </div>

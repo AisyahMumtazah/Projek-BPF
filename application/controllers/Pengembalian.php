@@ -20,9 +20,6 @@ class Pengembalian extends CI_Controller {
         $data['judul'] = "Halaman Pengembalian";
 		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['pengembalian'] = $this->Pengembalian_model->get();
-		$this->form_validation->set_rules('kode_pengembalian', 'Kode Pengembalian', 'required', [
-			'required' => 'Kode Pengembalian Wajib di isi'
-		]);
 		$this->form_validation->set_rules('kode_peminjaman', 'Kode Peminjaman', 'required', [
 			'required' => 'Kode Peminjaman Pengembalian Wajib di isi'
 		]);
@@ -44,7 +41,6 @@ class Pengembalian extends CI_Controller {
 			$this->load->view("layout/footer");
 		} else {
 			$data = [
-				'kode_pengembalian' => $this->input->post('kode_pengembalian'),
 				'kode_peminjaman' => $this->input->post('kode_peminjaman'),
 				'id_buku' => $this->input->post('id_buku'),
 				'id_anggota' => $this->input->post('id_anggota'),
@@ -62,9 +58,6 @@ class Pengembalian extends CI_Controller {
         $data['judul'] = "Halaman Edit Pengembalian";
 		$data['pengembalian'] = $this->Pengembalian_model->getById($id);
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-		$this->form_validation->set_rules('kode_pengembalian', 'Kode Pengembalian', 'required', [
-			'required' => 'Kode Pengembalian Wajib di isi'
-		]);
 		$this->form_validation->set_rules('kode_peminjaman', 'Kode Peminjaman', 'required', [
 			'required' => 'Kode Peminjaman Pengembalian Wajib di isi'
 		]);
@@ -86,7 +79,6 @@ class Pengembalian extends CI_Controller {
 			$this->load->view("layout/footer");
 		} else {
 			$data = [
-				'kode_pengembalian' => $this->input->post('kode_pengembalian'),
 				'kode_peminjaman' => $this->input->post('kode_peminjaman'),
 				'id_buku' => $this->input->post('id_buku'),
 				'id_anggota' => $this->input->post('id_anggota'),

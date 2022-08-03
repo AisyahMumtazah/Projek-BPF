@@ -1,35 +1,36 @@
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Peminjaman /</span> Form Tambah Peminjaman</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Peminjaman /</span> Form Ubah Peminjaman</h4>
     <div class="row">
         <!-- Basic Layout -->
         <div class="col-xxl">
             <div class="card mb-4">
                 <div class="card-body">
-                    <form action="<?=base_url('Peminjaman/tambah')?>" method="POST" enctype="multipart/form-data">
+                    <form action="" method="POST" enctype="multipart/form-data">
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="id_anggota">ID Anggota</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="id_anggota" id="id_anggota" placeholder="ID Anggota" />
-                                <?= form_error('id_anggota', '<small class="text-danger p1-3">', '</small>'); ?>
+                                <input type="text" class="form-control" id="id_anggota" name="id_anggota" value="<?=$peminjaman['id_anggota']?>" placeholder="ID Anggota" />
+                                <?= form_error('id_anggota', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="id_buku">ID Buku</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="id_buku" id="id_buku" placeholder="Nomor ISBN" />
-                                <?= form_error('id_buku', '<small class="text-danger p1-3">', '</small>'); ?>
+                                <input type="text" class="form-control" id="id_buku" name="id_buku" value="<?=$peminjaman['id_buku']?>" placeholder="ID Buku" />
+                                <?= form_error('id_buku', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
-                        </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="tanggal_pinjam">Tanggal Pinjam</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="date" name="tanggal_pinjam" id="tanggal_pinjam" placeholder="dd/MM/YYY">
+                                <input class="form-control" type="date" id="tanggal_pinjam" name="tanggal_pinjam" value="<?=$peminjaman['tanggal_pinjam']?>" placeholder="dd/MM/YYY">
+                                <?= form_error('tanggal_pinjam', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="tanggal_kembali">Tanggal Kembali</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="date" name="tanggal_kembali" id="tanggal_kembali" placeholder="dd/MM/YYY">
+                                <input class="form-control" type="date" id="tanggal_kembali" name="tanggal_kembali" value="<?=$peminjaman['tanggal_kembali']?>" placeholder="dd/MM/YYY">
+                                <?= form_error('tanggal_kembali', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <br class="my-2">
