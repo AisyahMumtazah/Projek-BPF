@@ -5,6 +5,8 @@ class Pengembalian extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Pengembalian_model');
+		$this->load->model('model_peminjaman');
+		$this->load->model('Peminjaman_model');
 	}
 	public function index()
 	{
@@ -15,11 +17,11 @@ class Pengembalian extends CI_Controller {
 		$this->load->view("pengembalian/vw_daftar_pengembalian", $data);
 		$this->load->view("Layout/footer", $data);
 	}
-	public function tambah()
+	public function tambah($id)
 	{
         $data['judul'] = "Halaman Pengembalian";
 		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
-		$data['pengembalian'] = $this->Pengembalian_model->get();
+		$data['peminjaman'] = $this->model_peminjaman->getById($id);
 		$this->form_validation->set_rules('kode_peminjaman', 'Kode Peminjaman', 'required', [
 			'required' => 'Kode Peminjaman Pengembalian Wajib di isi'
 		]);
@@ -47,7 +49,12 @@ class Pengembalian extends CI_Controller {
 				'tanggal_pengembalian' => $this->input->post('tanggal_pengembalian'),
 				'denda' => $this->input->post('denda'),
 			];
+			$data1 = [	
+				'status' => $this->input->post('status'),
+			];
+			$id = $this->input->post('kode_peminjaman');
 			$this->Pengembalian_model->insert($data);
+			$this->Peminjaman_model->update(['kode_peminjaman' => $id], $data1);
 			$this->session->set_flashdata('message', '<div class="alert alert-success"
 	role="alert">Data Pengembalian Berhasil Ditambah!</div>');
 			redirect('Pengembalian');
