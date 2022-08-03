@@ -26,7 +26,6 @@ class User extends CI_Controller {
 	{
 		$data['judul'] = "Halaman Riwayat Peminjaman";
 		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
-		$data['peminjaman'] = $this->model_peminjaman->get($this->session->userdata('id'));
 		$this->load->view("Layout/header_user", $data);
 		$this->load->view("user/vw_riwayat_peminjaman", $data);
 		$this->load->view("Layout/footer", $data);
