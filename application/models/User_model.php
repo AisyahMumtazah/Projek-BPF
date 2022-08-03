@@ -4,8 +4,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class User_model extends CI_Model{
     public $table = 'user';
     public $id = 'user.id';
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
+        $this->load->model('User_model','userrole');
     }
     public function get(){
         $this->db->from($this->table);
