@@ -44,14 +44,14 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="id_buku">Nomor ISBN</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="id_buku" name="id_buku" value="<?=$buku['id_buku']?>" placeholder="Kode ISBN" />
+                                <input type="text" class="form-control" id="id_buku" name="id_buku" value="<?=$buku['id_buku']?>" placeholder="Kode ISBN" readonly/>
                                 <?= form_error('id_buku', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="tgl_pengadaan">Tanggal Pengadaan</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="date" id="tgl_pengadaan" name="tgl_pengadaan" value="<?=$buku['tgl_pengadaan']?>" placeholder="dd/MM/YYY">
+                                <input class="form-control" type="date" id="tgl_pengadaan" name="tgl_pengadaan" value="<?=$buku['tgl_pengadaan']?>" placeholder="dd/MM/YYY" readonly>
                                 <?= form_error('tgl_pengadaan', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>

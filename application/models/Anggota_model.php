@@ -25,6 +25,11 @@ class Anggota_model extends CI_Model{
         $query=$this->db->get();
         return $query->result_array();
     }
+    public function total(){
+        $this->db->from($this->table);
+        $query=$this->db->get();
+        return $query->num_rows();
+    }
     public function update($where,$data){
         $this->db->update($this->table,$data,$where);
         return $this->db->affected_rows();

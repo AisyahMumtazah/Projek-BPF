@@ -41,4 +41,19 @@ class Peminjaman_model extends CI_Model
         $this->db->delete($this->table);
         return $this->db->affected_rows();
     }
+    public function total(){
+        $this->db->from($this->table);
+        $query=$this->db->get();
+        return $query->num_rows();
+    }
+    public function getPop(){
+        $this->db->select('count(p.id_buku) as id_buku,b.judul as judul,b.pengarang as pengarang,b.cover as cover');
+        $this->db->from('peminjaman p');
+        $this->db->join('buku b','p.id_buku=b.id_buku');
+        $this->db->group_by('p.id_buku');
+        $this->db->order_by('id_buku',"DESC");
+        $this->db->limit(3);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }

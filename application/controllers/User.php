@@ -5,6 +5,8 @@ class User extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Buku_model');
+		$this->load->model('Anggota_model');
+		$this->load->model('Peminjaman_model');
         $this->load->model('User_model','userrole');
 	}
 	public function index()
@@ -12,6 +14,10 @@ class User extends CI_Controller {
 		$data['judul'] = "Halaman Buku";
 		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['buku']=$this->Buku_model->getDes();
+		$data['pj']=$this->Peminjaman_model->getPop();
+		$data['bk']=$this->Buku_model->total();
+		$data['anggota']=$this->Anggota_model->total();
+		$data['peminjaman']=$this->Peminjaman_model->total();
 		$this->load->view("Layout/header_user", $data);
 		$this->load->view("admin/vw_dashboard", $data);
 		$this->load->view("Layout/footer", $data);
