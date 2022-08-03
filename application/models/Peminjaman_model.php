@@ -4,7 +4,7 @@ allowed');
 class Peminjaman_model extends CI_Model
 {
     public $table = 'peminjaman';
-    public $id = 'peminjaman.id';
+    public $id = 'peminjaman.kode_peminjaman';
     public function __construct()
     {
         parent::__construct();
@@ -18,7 +18,7 @@ class Peminjaman_model extends CI_Model
     public function getById($id)
     {
         $this->db->from($this->table);;
-        $this->db->where('id', $id);
+        $this->db->where('kode_peminjaman', $id);
         $query = $this->db->get();
         return $query->row_array();
     }

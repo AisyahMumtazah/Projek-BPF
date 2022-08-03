@@ -1,14 +1,13 @@
 <div class="container-fluid">
     <h1 class="h3 mb-4 text-gray-800"><?php echo $judul; ?></h1>
     <div class="row">
-        <div class="col-md-6"><a href="<?= base_url() ?>Pengembalian/tambah" class="btn btn-info mb-2">Halaman Pengembalian</a></div>
+        <div class="col-md-6"><a href="<?= base_url() ?>Pengembalian/tambah" class="btn btn-info mb-2">Form Pengembalian</a></div>
         <div class="col-md-12">
             <?= $this->session->flashdata('message'); ?>
             <table class="table">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Kode Pengembalian</th>
                         <th>Kode Peminjaman</th>
                         <th>Id Buku</th>
                         <th>Id Anggota</th>
@@ -22,7 +21,6 @@
                     <?php foreach ($pengembalian as $us) : ?>
                         <tr>
                             <td><?= $i; ?></td>
-                            <td><?= $us['kode_pengembalian']; ?></td>
                             <td><?= $us['kode_peminjaman']; ?></td>
                             <td><?= $us['id_buku']; ?></td>
                             <td><?= $us['id_anggota']; ?></td>

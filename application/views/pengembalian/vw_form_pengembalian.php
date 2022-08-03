@@ -10,11 +10,6 @@
                 <div class="card-body">
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="kode_pengembalian">Kode Pengembalian</label>
-                            <input type="text" name="kode_pengembalian" value="<?= set_value('kode_pengembalian') ?>" class="form-control" id="kode_pengembalian" placeholder="Id Anggota">
-                            <?= form_error('kode_pengembalian', '<small class="text-danger p1-3">', '</small>'); ?>
-                        </div>
-                        <div class="form-group">
                             <label for="kode_peminjaman">Kode Peminjaman</label>
                             <input type="text" name="kode_peminjaman" value="<?= set_value('kode_peminjaman') ?>" class="form-control" id="kode_peminjaman" placeholder="Tanggal Pinjam">
                             <?= form_error('kode_peminjaman', '<small class="text-danger p1-3">', '</small>'); ?>
