@@ -46,4 +46,9 @@ class Buku_model extends CI_Model
         $this->db->delete($this->table);
         return $this->db->affected_rows();
     }
+    public function total(){
+        $this->db->from($this->table);
+        $query=$this->db->get();
+        return $query->num_rows();
+    }
 }
