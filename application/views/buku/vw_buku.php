@@ -7,7 +7,6 @@
             <?= $this->session->flashdata('message'); ?>
         </div>
         <div class="col-md-12">
-            
             <div class="table-responsive text-nowrap">
                 <table class="table table-striped">
                     <thead>
