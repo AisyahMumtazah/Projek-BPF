@@ -9,11 +9,12 @@
                     <h4 class="mb-2">Selamat Datang di Perpustakaan Hilir-Mudik</h4>
                     <p class="mb-4">Silahkan isi Username dan Password untuk melakukan login</p>
                     <?= $this->session->flashdata('message'); ?>
-                    <form id="formAuthentication" class="mb-3" action="<?=base_url('Auth/cek_login');?>" method="POST">
+                    <form id="formAuthentication" class="mb-3" action="<?=base_url('Auth');?>" method="POST">
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
                             <input type="text" class="form-control" id="username" name="username"
                                 placeholder="Enter your username" autofocus />
+                            <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="mb-3 form-password-toggle">
                             <div class="d-flex justify-content-between">
@@ -28,6 +29,7 @@
                                     aria-describedby="password"/>
                                 <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                             </div>
+                            <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="mb-3">
                             <div class="form-check">
