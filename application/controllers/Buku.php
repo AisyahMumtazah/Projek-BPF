@@ -22,9 +22,9 @@ class Buku extends CI_Controller {
 	}
 	public function tambah()
 	{
-		//$data['judul'] = "Halaman Tambah Buku";
-		//$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('email')])->row_array();
-		//$data['buku'] = $this->Buku_model->get();
+		$data['judul'] = "Halaman Tambah Buku";
+		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+		$data['buku'] = $this->Buku_model->get();
 		$data = [
 			'judul' => $this->input->post('judul'),
 			'pengarang' => $this->input->post('pengarang'),
@@ -56,7 +56,7 @@ class Buku extends CI_Controller {
 	{
 		$data['judul'] = "Halaman Edit Buku";
 		$data['buku'] = $this->Buku_model->getById($id);
-		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 		$this->form_validation->set_rules('nama', 'Nama Buku', 'required', [
 			'required' => 'Nama Buku Wajib di isi'
 		]);

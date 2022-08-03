@@ -9,7 +9,7 @@
                     <h4 class="mb-2">Selamat Datang di Perpustakaan Hilir-Mudik</h4>
                     <p class="mb-4">Silahkan isi Username dan Password untuk melakukan login</p>
                     <?= $this->session->flashdata('message'); ?>
-                    <form id="formAuthentication" class="mb-3" action="<?=base_url('Auth');?>" method="POST">
+                    <form id="formAuthentication" class="mb-3" action="<?=base_url('Auth/cek_login');?>" method="POST">
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
                             <input type="text" class="form-control" id="username" name="username"

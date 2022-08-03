@@ -49,9 +49,9 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="cover">Cover</label>
+                            <label class="col-sm-2 col-form-label custom-file-label" for="cover">Cover</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="file" id="cover">
+                                <input class="form-control custom-file-input" type="file" id="cover">
                             </div>
                         </div>
                         <br class="my-2">

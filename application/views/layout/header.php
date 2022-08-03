@@ -142,7 +142,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item">
-              <a href="<?=site_url('Welcome/dashboard')?>" class="menu-link">
+              <a href="<?=site_url('Welcome')?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
@@ -174,7 +174,7 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="<?=site_url('User/logout')?>" class="menu-link menu-toggle">
+              <a href="<?=site_url('User/logout')?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-cube-alt"></i>
                 <div data-i18n="Misc">Logout</div>
               </a>

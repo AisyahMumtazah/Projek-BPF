@@ -9,7 +9,7 @@ class Pengembalian extends CI_Controller {
 	public function index()
 	{
 		$data['judul'] = "Halaman Pengembalian";
-		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['pengembalian'] = $this->Pengembalian_model->get();
 		$this->load->view("Layout/header", $data);
 		$this->load->view("pengembalian/vw_daftar_pengembalian", $data);
@@ -18,7 +18,7 @@ class Pengembalian extends CI_Controller {
 	public function tambah()
 	{
         $data['judul'] = "Halaman Pengembalian";
-		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 		$data['pengembalian'] = $this->Pengembalian_model->get();
 		$this->form_validation->set_rules('kode_pengembalian', 'Kode Pengembalian', 'required', [
 			'required' => 'Kode Pengembalian Wajib di isi'
