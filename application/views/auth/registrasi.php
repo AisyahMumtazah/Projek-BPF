@@ -10,16 +10,18 @@
                             <span class="app-brand-text demo text-body fw-bolder">Registrasi</span>
                         </a>
                     </div>
-                    <form class="mb-3" action="<?=base_url('Auth/cek_regis');?>" method="POST">
+                    <form class="mb-3" action="<?=base_url('Auth/registrasi');?>" method="POST">
                         <div class="mb-3">
-                            <label for="namalengkap" class="form-label">Nama Lengkap</label>
+                            <label for="nama_anggota" class="form-label">Nama Lengkap</label>
                             <input type="text" class="form-control" id="nama_anggota" name="nama_anggota"
                                 placeholder="Masukkan Nama Lengkap" autofocus />
+                                <?= form_error('nama_anggota', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="mb-3">
                             <label for="email_anggota" class="form-label">Email</label>
                             <input type="text" class="form-control" id="email_anggota" name="email_anggota"
                                 placeholder="Masukkan Alamat Email" />
+                            <?= form_error('email_anggota', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="row">
                             <div class="col-sm">
@@ -27,6 +29,7 @@
                                     <label for="username" class="form-label">Username</label>
                                     <input type="text" class="form-control" id="username" name="username"
                                         placeholder="Masukkan Username" />
+                                    <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
                             <div class="col-sm">
@@ -34,6 +37,7 @@
                                     <label for="no_telp_anggota" class="form-label">No Telp</label>
                                     <input type="text" class="form-control" id="no_telp_anggota" name="no_telp_anggota"
                                         placeholder="0123456789" />
+                                    <?= form_error('no_telp_anggota', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
                         </div>
@@ -44,6 +48,7 @@
                                     <input type="password" class="form-control" id="password" name="password"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" 
                                         aria-describedby="password"/>
+                                    <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                             </div>
                             <div class="col-sm">
@@ -52,6 +57,7 @@
                                     <input type="password" class="form-control" id="password2" name="password2"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" 
                                         aria-describedby="password"/>
+                                    <?= form_error('password2', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                             </div>
                         </div>

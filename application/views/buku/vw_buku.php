@@ -3,10 +3,11 @@
     <div class="card">
         <h1 class="card-header"><?php echo $judul; ?></h1>
         <div class="container">
-            <div class="col-md-6"><a href="<?= base_url('Buku/tampilTambah') ?>" class="btn btn-info mb-2">Tambah Buku</a></div>
+            <div class="col-md-6"><a href="<?= base_url('Buku/tambah') ?>" class="btn btn-info mb-2">Tambah Buku</a></div>
+            <?= $this->session->flashdata('message'); ?>
         </div>
         <div class="col-md-12">
-            <?= $this->session->flashdata('message'); ?>
+            
             <div class="table-responsive text-nowrap">
                 <table class="table table-striped">
                     <thead>

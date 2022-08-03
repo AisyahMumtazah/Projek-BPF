@@ -9,49 +9,56 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="judul">Judul</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="judul" placeholder="Judul Buku" />
+                                <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul Buku" />
+                                <?= form_error('judul', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="pengarang">Pengarang</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="pengarang" placeholder="Pengarang" />
+                                <input type="text" class="form-control" id="pengarang" name="pengarang" placeholder="Pengarang" />
+                                <?= form_error('pengarang', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="kategori">Kategori</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="kategori" placeholder="Kategori" />
+                                <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Kategori" />
+                                <?= form_error('kategori', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="nama_penerbit">Nama Penerbit</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nama_penerbit" placeholder="Penerbit" />
+                                <input type="text" class="form-control" id="nama_penerbit" name="nama_penerbit" placeholder="Penerbit" />
+                                <?= form_error('nama_penerbit', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="tahun_terbit">Tahun Terbit</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="tahun_terbit" placeholder="Tahun Terbit" />
+                                <input type="text" class="form-control" id="tahun_terbit" name="tahun_terbit" placeholder="Tahun Terbit" />
+                                <?= form_error('tahun_terbit', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="id_buku">Nomor ISBN</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="id_buku" placeholder="Kode ISBN" />
+                                <input type="text" class="form-control" id="id_buku" name="id_buku" placeholder="Kode ISBN" />
+                                <?= form_error('id_buku', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="tgl_pengadaan">Tanggal Pengadaan</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="date" id="tgl_pengadaan" placeholder="dd/MM/YYY">
+                                <input class="form-control" type="date" id="tgl_pengadaan" name="tgl_pengadaan" placeholder="dd/MM/YYY">
+                                <?= form_error('tgl_pengadaan', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label custom-file-label" for="cover">Cover</label>
                             <div class="col-md-10">
-                                <input class="form-control custom-file-input" type="file" id="cover">
+                                <input class="form-control custom-file-input" type="file" id="cover" name="cover">
                             </div>
                         </div>
                         <br class="my-2">
