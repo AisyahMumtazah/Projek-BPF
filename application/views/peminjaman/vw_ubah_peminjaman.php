@@ -20,6 +20,7 @@
                                 <input type="text" class="form-control" id="id_buku" name="id_buku" value="<?=$peminjaman['id_buku']?>" placeholder="ID Buku"  readonly/>
                                 <?= form_error('id_buku', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
+                        </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="tanggal_pinjam">Tanggal Pinjam</label>
                             <div class="col-md-10">
