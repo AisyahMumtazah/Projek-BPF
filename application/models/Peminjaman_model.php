@@ -17,8 +17,11 @@ class Peminjaman_model extends CI_Model
     }
     public function getById($id)
     {
-        $this->db->from($this->table);;
-        $this->db->where('kode_peminjaman', $id);
+        $this->db->select('*');
+        $this->db->from('peminjaman m');
+        $this->db->join('anggota p', 'm.id_anggota = p.id_anggota');
+        $this->db->join('buku b', 'm.id_buku = b.id_buku');
+        $this->db->where('m.kode_peminjaman', $id);
         $query = $this->db->get();
         return $query->row_array();
     }
